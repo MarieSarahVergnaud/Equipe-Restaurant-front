@@ -14,12 +14,11 @@
     <div *ngFor="let table of tables">
       <!-- Ajouter ngIf pour vérifier si l'état de la table est 'LIBRE' -->
       <ng-container *ngIf="table.etat === 'LIBRE'">
-
-        <button (click)="selectionTable(table)">
-            
-          <p>Numéro{{ table.numero }}</p>
-          <p>Places{{ table.nombrePlace }}</p>
-          <p>ETAT {{ table.etat }}</p>
+        <p>Numéro{{ table.numero }}</p>
+        <p>Places{{ table.nombrePlace }}</p>
+        <p>ETAT {{ table.etat }}</p>
+        <button (click)="passerTableLibrePresent(table)">
+          PASSER EN PRESENT
         </button>
       </ng-container>
     </div>
@@ -35,6 +34,9 @@
         <p>Numéro{{ table.numero }}</p>
         <p>Places{{ table.nombrePlace }}</p>
         <p>ETAT {{ table.etat }}</p>
+        <button (click)="passerTableReserveePresent(table)">
+          PASSER EN PRESENT
+        </button>
       </ng-container>
     </div>
   </div>

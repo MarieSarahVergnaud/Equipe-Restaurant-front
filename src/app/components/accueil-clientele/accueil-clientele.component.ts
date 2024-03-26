@@ -15,16 +15,27 @@ export class AccueilClienteleComponent implements OnInit {
   public tables$?: Observable<Tables>;
 
   constructor(public acceuilClienteleAPIService: AcceuilClienteleAPIService) {}
-  
-  
+
   ngOnInit(): void {
     console.log('On init');
     this.tables$ = this.acceuilClienteleAPIService.getAllTables();
   }
 
-  public selectionTable(table: Table):void {
-    console.log("table selectionnées " , table);
-    // ngbModal
-   }
+  passerTableLibrePresent(table: Table): void {
+    const newStatus = table.etat === 'LIBRE' ? 'PRESENT' : 'LIBRE';
+    this.acceuilClienteleAPIService
+      .updateTableStatus(table.id, newStatus)
+      .subscribe(() => {
+        this.tables$ = this.acceuilClienteleAPIService.getAllTables(); // Refresh tables
+      });
+  }
 
+  passerTableReserveePresent(table: Table): void {
+    const newStatus = table.etat === 'RESERVEE' ? 'PRESENT' : 'RESERVEE';
+    this.acceuilClienteleAPIService
+      .updateTableStatus(table.id, newStatus)
+      .subscribe(() => {
+        this.tables$ = this.acceuilClienteleAPIService.getAllTables(); // Refresh tables
+      });
+  }
 }
