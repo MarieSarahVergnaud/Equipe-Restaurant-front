@@ -1,1 +1,16 @@
 <p>Page de reservations </p>
+
+<ng-container *ngIf="reservation$ | async as reservations">
+  <div *ngFor="let reservation of reservations">
+    <div>
+    <h2>Nom du restaurant :{{reservation.restaurant.nom}}</h2>
+
+    <p>Date :{{reservation.date}}</p>
+    <p>Heure :{{reservation.heure}}</p>
+    <p>Places :{{reservation.nbrPlace}}</p>
+
+
+  </div>
+
+  </div>
+</ng-container>
