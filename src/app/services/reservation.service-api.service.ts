@@ -8,6 +8,7 @@ import { Observable, catchError, map, of } from 'rxjs';
 })
 export class ReservationAPIService {
 
+
   constructor(private httpClient: HttpClient) { }
   URL: string = 'http://localhost:8080/reservations/';
 
@@ -44,6 +45,15 @@ export class ReservationAPIService {
         console.error(e);
 
         return of([]);
+      })
+    );
+  }
+
+  updateReservationStatus(id: number, newStatus: string): Observable<any> {
+    return this.httpClient.put(`${this.URL}${id}`, { etat: newStatus }).pipe(
+      catchError((e) => {
+        console.error(e);
+        return of(null);
       })
     );
   }

@@ -9,7 +9,9 @@
       <p>Date : {{reservation.date}}</p>
       <p>Heure : {{reservation.heure}}</p>
       <p>Places : {{reservation.nbrPlace}}</p>
-      <p>Etat : {{reservation.etat}}</p> <button>CHANGER ETAT RESA</button>
+      <p>Etat : {{reservation.etat}}</p>
+      <button (click)="accepterReservation(reservation)">ACCEPTER</button>
+      <button (click)="refuserReservation(reservation)">REFUSER</button>
 
 
     </div>
@@ -26,7 +28,9 @@
       <p>Date : {{reservation.date}}</p>
       <p>Heure : {{reservation.heure}}</p>
       <p>Places : {{reservation.nbrPlace}}</p>
-      <p>Etat : {{reservation.etat}}</p> <button>CHANGER ETAT RESA</button>
+      <p>Etat : {{reservation.etat}}</p>
+      <button (click)="accepterReservation(reservation)">ACCEPTER</button>
+      <button (click)="refuserReservation(reservation)">REFUSER</button>
 
 
     </div>
