@@ -1,1 +1,35 @@
 <p>Page de reservations </p>
+<h1>Réservation du jour</h1>
+
+<ng-container *ngIf="reservationToday$ | async as reservations">
+  <div *ngFor="let reservation of reservations">
+    <div>
+      <h2>{{reservation.restaurant.nom}}</h2>
+
+      <p>Date : {{reservation.date}}</p>
+      <p>Heure : {{reservation.heure}}</p>
+      <p>Places : {{reservation.nbrPlace}}</p>
+      <p>Etat : {{reservation.etat}}</p> <button>CHANGER ETAT RESA</button>
+
+
+    </div>
+
+  </div>
+</ng-container>
+
+<h1>Réservation futures</h1>
+<ng-container *ngIf="reservationTomorrow$ | async as reservations">
+  <div *ngFor="let reservation of reservations">
+    <div>
+      <h2>{{reservation.restaurant.nom}}</h2>
+
+      <p>Date : {{reservation.date}}</p>
+      <p>Heure : {{reservation.heure}}</p>
+      <p>Places : {{reservation.nbrPlace}}</p>
+      <p>Etat : {{reservation.etat}}</p> <button>CHANGER ETAT RESA</button>
+
+
+    </div>
+
+  </div>
+</ng-container>
