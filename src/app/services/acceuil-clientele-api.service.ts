@@ -28,7 +28,7 @@ export class AcceuilClienteleAPIService {
   }
 
   public updateTableStatus(id: number, newStatus: string): Observable<any> {
-    return this.httpClient.put(`${this.URL}/${id}`, { etat: newStatus }).pipe(
+    return this.httpClient.put(`${this.URL}${id}`, { etat: newStatus }).pipe(
       catchError((e) => {
         console.error(e);
         return of(null);

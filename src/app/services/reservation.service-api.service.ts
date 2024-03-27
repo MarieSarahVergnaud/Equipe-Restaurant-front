@@ -12,14 +12,14 @@ export class ReservationAPIService {
   URL: string = 'http://localhost:8080/reservations/';
 
 
-  public getAllReservations(): Observable<Reservations> {
-    return this.httpClient.get<Reservations>(this.URL+'restaurant/4').pipe(
-      map((reservations: Reservations | null) => {
-        if (reservations == null) {
+  public getAllReservationsToday(): Observable<Reservations> {
+    return this.httpClient.get<Reservations>(this.URL+'today/restaurant/4').pipe(
+      map((reservationsToday: Reservations | null) => {
+        if (reservationsToday == null) {
           return [];
         }
 
-        return reservations;
+        return reservationsToday;
       }),
 
       catchError((e) => {
@@ -30,6 +30,22 @@ export class ReservationAPIService {
     );
   }
 
+  public getAllReservationsTomorrow(): Observable<Reservations> {
+    return this.httpClient.get<Reservations>(this.URL+'tomorrow/restaurant/4').pipe(
+      map((reservationsTomorrow: Reservations | null) => {
+        if (reservationsTomorrow == null) {
+          return [];
+        }
 
+        return reservationsTomorrow;
+      }),
+
+      catchError((e) => {
+        console.error(e);
+
+        return of([]);
+      })
+    );
+  }
 
 }

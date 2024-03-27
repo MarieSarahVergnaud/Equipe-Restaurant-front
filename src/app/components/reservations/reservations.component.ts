@@ -15,13 +15,16 @@ import { Reservations } from '../../entities/reservation';
 
 export class ReservationsComponent implements OnInit{
 
-  public reservation$?: Observable<Reservations>;
+  public reservationToday$?: Observable<Reservations>;
+  public reservationTomorrow$?: Observable<Reservations>;
+
 
   constructor(public reservationAPIService: ReservationAPIService) {}
 
   ngOnInit(): void{
     console.log("OnInit");
-    this.reservation$ = this.reservationAPIService.getAllReservations();
+    this.reservationToday$ = this.reservationAPIService.getAllReservationsToday();
+    this.reservationTomorrow$ = this.reservationAPIService.getAllReservationsTomorrow();
   }
 
 
