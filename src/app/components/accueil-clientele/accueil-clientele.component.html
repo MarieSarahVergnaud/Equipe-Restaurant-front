@@ -1,24 +1,15 @@
 <h1>page accueil-clientele</h1>
 
-<!-- <form (ngSubmit)="refreshPokemons()" class="mb-2">
-    <input name="search" type="search" [(ngModel)]="search" class="form-control"
-        placeholder="Rechercher par nom ou par type..">
-    <button class="mt-1 btn btn-primary">Rechercher</button>
-</form> -->
-
-<!-- <ng-container *ngIf="pokemons$ | async as pokemons else loading"> -->
-
 <div>TABLES LIBRES</div>
 <ng-container *ngIf="tables$ | async as tables">
   <div class="d-flex flex-row flex-wrap gap-2 m-2">
     <div *ngFor="let table of tables">
-      <!-- Ajouter ngIf pour vérifier si l'état de la table est 'LIBRE' -->
       <ng-container *ngIf="table.etat === 'LIBRE'">
         <p>Numéro{{ table.numero }}</p>
         <p>Places{{ table.nombrePlace }}</p>
         <p>ETAT {{ table.etat }}</p>
         <button (click)="passerTableLibrePresent(table)">
-          PASSER EN PRESENT
+          {{table.etat === "LIBRE" ? "PRESENT" : "LIBRE"}}
         </button>
       </ng-container>
     </div>
@@ -29,13 +20,29 @@
 <ng-container *ngIf="tables$ | async as tables">
   <div class="d-flex flex-row flex-wrap gap-2 m-2">
     <div *ngFor="let table of tables">
-      <!-- Ajouter ngIf pour vérifier si l'état de la table est 'LIBRE' -->
       <ng-container *ngIf="table.etat === 'RESERVEE'">
         <p>Numéro{{ table.numero }}</p>
         <p>Places{{ table.nombrePlace }}</p>
         <p>ETAT {{ table.etat }}</p>
         <button (click)="passerTableReserveePresent(table)">
           PASSER EN PRESENT
+        </button>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+
+
+<div>TABLES PRESENTES</div>
+<ng-container *ngIf="tables$ | async as tables">
+  <div class="d-flex flex-row flex-wrap gap-2 m-2">
+    <div *ngFor="let table of tables">
+      <ng-container *ngIf="table.etat === 'PRESENT'">
+        <p>Numéro{{ table.numero }}</p>
+        <p>Places{{ table.nombrePlace }}</p>
+        <p>ETAT {{ table.etat }}</p>
+        <button (click)="passerTableLibrePresent(table)">
+          {{table.etat === "PRESENT" ? "LIBRE" : "PRESENT"}}
         </button>
       </ng-container>
     </div>
