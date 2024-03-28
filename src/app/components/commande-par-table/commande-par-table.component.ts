@@ -6,6 +6,7 @@ import { OnInit } from '@angular/core';
 import { ServiceEnSalleAPIService } from '../../services/service-en-salle-api.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-commande-par-table',
   standalone: true,
@@ -21,7 +22,8 @@ export class CommandeParTableComponent  implements OnInit {
     private route: ActivatedRoute,){}
 
   ngOnInit(): void {
-    this.tables$ = this.serviceEnSalleAPIService.getTableById(21);
+    const tableId = this.route.snapshot.params['id'];
+    this.tables$ = this.serviceEnSalleAPIService.getTableById(tableId);
     console.log(" test",this.tables$);
     
   }

@@ -4,7 +4,7 @@
   <div class="tables-container">
     <div *ngFor="let table of tables">
       <ng-container *ngIf="table.etat === 'LIBRE'">
-        <div class="numero-box ">{{ table.numero }}</div>
+        <div (click)="onViewTable(table.id)" class="numero-box ">{{ table.numero }}</div>
       </ng-container>
     </div>
   </div>

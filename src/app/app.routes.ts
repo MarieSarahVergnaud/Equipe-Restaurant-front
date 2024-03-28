@@ -37,7 +37,7 @@ export const routes: Routes = [
   { path: 'service-en-salle', component: ServiceEnSalleComponent },
   { path: 'cuisine', component: CuisineComponent },
   { path: 'caisse', component: CaisseComponent },
-  { path: 'commande', component: CommandeParTableComponent },
+  { path: 'commande/:id', component: CommandeParTableComponent },
   
 
   // {
