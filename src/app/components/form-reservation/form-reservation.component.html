@@ -1,0 +1,18 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <input type="hidden" id="restaurantId" [(ngModel)]="restaurantId" name="restaurantId" value="4">
+    <label for="date">Date:</label>
+    <input type="date" id="date" [(ngModel)]="date" name="date" required>
+  </div>
+  <div>
+    <label for="time">Heure:</label>
+    <input type="time" id="time" [(ngModel)]="time" name="time" required>
+  </div>
+  <div>
+    <label for="numberOfPeople">Nombre de personnes:</label>
+    <select id="numberOfPeople" [(ngModel)]="numberOfPeople" name="numberOfPeople" required>
+      <option *ngFor="let number of peopleNumbers" [value]="number">{{number}}</option>
+    </select>
+  </div>
+  <button type="submit">Créer une réservation</button>
+</form>

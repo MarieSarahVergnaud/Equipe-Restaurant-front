@@ -11,6 +11,6 @@ export interface Reservation {
   heure: string
   nbrPlace: number
   restaurant: Restaurant
-  client: Client
-  tables: Tables
+  client: Client | null;
+  tables: Tables | null;
 }

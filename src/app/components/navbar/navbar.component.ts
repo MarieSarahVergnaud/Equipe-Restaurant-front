@@ -19,6 +19,7 @@ export class NavbarComponent {
     { path: 'service-en-salle', libelle: 'Service' },
     { path: 'cuisine', libelle: 'Cuisine' },
     { path: 'caisse', libelle: 'Caisse' },
+
   ];
 
   constructor() {} // private loginService: LoginService
