@@ -1,0 +1,8 @@
+<h1>Commande par table</h1>
+
+<ng-container *ngIf="tables$ | async as table">
+  <div>
+    <p>Numéro de table: {{ table.numero}}</p>
+
+  </div>
+</ng-container>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Tables } from '../entities/table';
+import { Tables ,Table} from '../entities/table';
 import { Observable, map ,catchError,of} from 'rxjs';
 
 @Injectable({
@@ -27,4 +27,15 @@ export class ServiceEnSalleAPIService {
       })
     );
   }
+  public getTableById(id: number): Observable<Table> {
+    const tableUrl = `${this.URL}/${id}`;
+    return this.httpClient.get<Table>(tableUrl).pipe(
+      catchError((error) => {
+        console.error(error);
+        throw 'La table demandée est introuvable.';
+      })
+    );
+  }
+
+  
 }

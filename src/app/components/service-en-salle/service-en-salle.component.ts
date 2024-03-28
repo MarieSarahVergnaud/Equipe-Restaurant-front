@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Tables } from '../../entities/table';
+import { Tables} from '../../entities/table';
 import { CommonModule } from '@angular/common';
 import { OnInit } from '@angular/core';
 import { ServiceEnSalleAPIService } from '../../services/service-en-salle-api.service';
