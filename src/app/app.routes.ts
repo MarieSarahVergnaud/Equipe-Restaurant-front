@@ -42,7 +42,7 @@ export const routes: Routes = [
 
 
   { path: 'commande/:id', component: CommandeParTableComponent },
-  
+
 
   { path: 'form-reservation', component: FormReservationComponent},
 

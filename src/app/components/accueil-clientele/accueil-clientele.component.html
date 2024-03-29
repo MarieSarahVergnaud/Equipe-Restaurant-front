@@ -1,50 +1,72 @@
-<h1>page accueil-clientele</h1>
-
-<div>TABLES LIBRES</div>
-<ng-container *ngIf="tables$ | async as tables">
-  <div class="d-flex flex-row flex-wrap gap-2 m-2">
-    <div *ngFor="let table of tables">
-      <ng-container *ngIf="table.etat === 'LIBRE'">
-        <p>Numéro{{ table.numero }}</p>
-        <p>Places{{ table.nombrePlace }}</p>
-        <p>ETAT {{ table.etat }}</p>
-        <button (click)="passerTableLibrePresent(table)">
-          {{table.etat === "LIBRE" ? "PRESENT" : "LIBRE"}}
-        </button>
-      </ng-container>
+<div class="containerAcceuilClientele">
+  <div class="card">
+    <div class="intitules">
+      <h3>Libres</h3>
     </div>
+    <ng-container *ngIf="tables$ | async as tables">
+      <div  *ngFor="let table of tables">
+        <ng-container  *ngIf="table.etat === 'LIBRE'">
+          <div class="cardSeules" >
+          <h6><strong>Table: </strong>{{ table.numero }}</h6>
+          <h6><strong>Places: </strong>{{ table.nombrePlace }}</h6>
+          <h6><strong>Etat: </strong>{{ table.etat }}</h6>
+          <div class="etat">
+          <h6><i>Passer en : </i></h6>
+          <button (click)="passerTableLibrePresent(table)">
+            {{table.etat === "LIBRE" ? "PRESENT" : "LIBRE"}}
+          </button>
+          </div></div>
+        </ng-container>
+      </div>
+    </ng-container>
   </div>
-</ng-container>
-
-<div>TABLES RESERVEES</div>
-<ng-container *ngIf="tables$ | async as tables">
-  <div class="d-flex flex-row flex-wrap gap-2 m-2">
-    <div *ngFor="let table of tables">
-      <ng-container *ngIf="table.etat === 'RESERVEE'">
-        <p>Numéro{{ table.numero }}</p>
-        <p>Places{{ table.nombrePlace }}</p>
-        <p>ETAT {{ table.etat }}</p>
-        <button (click)="passerTableReserveePresent(table)">
-          PASSER EN PRESENT
-        </button>
-      </ng-container>
+  <div class="card">
+    <div class="intitules">
+      <h3>Réservées</h3>
     </div>
+
+
+    <ng-container *ngIf="tables$ | async as tables">
+      <div *ngFor="let table of tables">
+        <ng-container  *ngIf="table.etat === 'RESERVEE'">
+          <div class="cardSeules" >
+          <h6><strong>Table: </strong>{{ table.numero }}</h6>
+          <h6><strong>Places: </strong>{{ table.nombrePlace }}</h6>
+          <h6><strong>Etat: </strong>{{ table.etat }}</h6>
+          <div class="etat"></div>
+          <h6><i>Passer en : </i></h6>
+          <button (click)="passerTableReserveePresent(table)">
+            PASSER EN PRESENT
+          </button>
+          </div>
+
+        </ng-container>
+      </div>
+    </ng-container>
   </div>
-</ng-container>
 
-
-<div>TABLES PRESENTES</div>
-<ng-container *ngIf="tables$ | async as tables">
-  <div class="d-flex flex-row flex-wrap gap-2 m-2">
-    <div *ngFor="let table of tables">
-      <ng-container *ngIf="table.etat === 'PRESENT'">
-        <p>Numéro{{ table.numero }}</p>
-        <p>Places{{ table.nombrePlace }}</p>
-        <p>ETAT {{ table.etat }}</p>
-        <button (click)="passerTableLibrePresent(table)">
-          {{table.etat === "PRESENT" ? "LIBRE" : "PRESENT"}}
-        </button>
-      </ng-container>
+  <div class="card">
+    <div class="intitules">
+      <h3>Présentes</h3>
     </div>
+
+
+    <ng-container *ngIf="tables$ | async as tables">
+      <div *ngFor="let table of tables">
+        <ng-container  *ngIf="table.etat === 'PRESENT'">
+          <div class="cardSeules" >
+          <h6><strong>Numéro: </strong>{{ table.numero }}</h6>
+          <h6><strong>Places: </strong>{{ table.nombrePlace }}</h6>
+          <h6><strong>Etat: </strong>{{ table.etat }}</h6>
+          <div class="etat">
+          <h6><i>Passer en : </i></h6>
+          <button (click)="passerTableLibrePresent(table)">
+            {{table.etat === "PRESENT" ? "LIBRE" : "PRESENT"}}
+          </button>
+        </div>
+        </div>
+        </ng-container>
+      </div>
+    </ng-container>
   </div>
-</ng-container>
+</div>
