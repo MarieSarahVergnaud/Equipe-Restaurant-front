@@ -1,6 +1,20 @@
-# EquipeRestaurantFront
+Bienvenue dans le readme du frontend de la 3ème application de notre projet fil rouge concerant la modernisation des outils informatiques de la firme Pâte d'or.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+**PRESENTATION :**
+
+Cette application est à destination des équipes des restaurants.
+
+Elle leur permet :
+  - d'accepter ou refuser les demandes de réservations
+  - d'enregistrer les commandes des clients
+  - de génerer les factures (additions) des clients
+
+Elle est connectée à la même base de données Microsoft SQL Server que les 2 autres application du projet fil rouge.
+
+
+**DOCUMENTATION :**
+
+Ce projet a été généré avec [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
 
 ## Development server
 
