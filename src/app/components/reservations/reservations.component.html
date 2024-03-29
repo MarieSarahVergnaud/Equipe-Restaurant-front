@@ -1,27 +1,21 @@
 <p>Page de reservations </p>
 <h1>Créer une réservation</h1>
-
 <button type="button" class="btn btn-primary" (click)="afficherFormulaireReservation()">
   <i class="fas fa-plus"></i> Nouvelle Resevation
 </button>
 
 <h1>Réservation du jour</h1>
-
 <ng-container *ngIf="reservationToday$ | async as reservations">
   <div *ngFor="let reservation of reservations">
     <div>
       <h2>{{reservation.restaurant.nom}}</h2>
-
       <p>Date : {{reservation.date}}</p>
       <p>Heure : {{reservation.heure}}</p>
       <p>Places : {{reservation.nbrPlace}}</p>
       <p>Etat : {{reservation.etat}}</p>
       <button (click)="accepterReservation(reservation)">ACCEPTER</button>
       <button (click)="refuserReservation(reservation)">REFUSER</button>
-
-
     </div>
-
   </div>
 </ng-container>
 
@@ -30,16 +24,12 @@
   <div *ngFor="let reservation of reservations">
     <div>
       <h2>{{reservation.restaurant.nom}}</h2>
-
       <p>Date : {{reservation.date}}</p>
       <p>Heure : {{reservation.heure}}</p>
       <p>Places : {{reservation.nbrPlace}}</p>
       <p>Etat : {{reservation.etat}}</p>
       <button (click)="accepterReservation(reservation)">ACCEPTER</button>
       <button (click)="refuserReservation(reservation)">REFUSER</button>
-
-
     </div>
-
   </div>
 </ng-container>

@@ -1,8 +1,8 @@
-import { Component, NgModule, OnInit } from '@angular/core';
-import { AcceuilClienteleAPIService } from '../../services/acceuil-clientele-api.service';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Table, Tables } from '../../entities/table';
-import { CommonModule } from '@angular/common';
+import { AcceuilClienteleAPIService } from '../../services/acceuil-clientele-api.service';
 
 @Component({
   selector: 'app-accueil-clientele',

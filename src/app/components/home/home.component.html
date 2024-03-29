@@ -1,8 +1,6 @@
-
 <div class="container">
   <div class="card" *ngFor="let menuRoute of menuRoutes">
     <a class="nav-link" [routerLink]="menuRoute.path">{{ menuRoute.libelle }}</a>
   </div>
   <div class="card hidden"></div>
 </div>
-

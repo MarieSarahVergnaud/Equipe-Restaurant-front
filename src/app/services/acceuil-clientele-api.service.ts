@@ -1,18 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, of } from 'rxjs';
-import {  Tables } from '../entities/table';
-
-
+import { Tables } from '../entities/table';
 
 @Injectable({ providedIn: 'root' })
 export class AcceuilClienteleAPIService {
   constructor(private httpClient: HttpClient) {}
-  URL: string = 'http://localhost:8080/table/'; /* ON AFFICHE LES TABLES DU
-  RESTAURANT ID4 CAR POUR LE  PathRestaurant/4 EN DUR CAR PAS ENCORE GESTION*/
+  URL: string = 'http://localhost:8080/table/';
 
   public getAllTables(): Observable<Tables> {
-    return this.httpClient.get<Tables>(this.URL+'PathRestaurant/4').pipe(
+    return this.httpClient.get<Tables>(this.URL + 'PathRestaurant/4').pipe(
       map((tables: Tables | null) => {
         if (tables == null) {
           return [];

@@ -1,19 +1,16 @@
-
 .tables-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; 
-  }
-  
- 
-  .numero-box {
-    width: 100px; 
-    height: 100px; 
-    background-color: lightblue; 
-    border-radius: 10px; 
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    cursor: pointer;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.numero-box {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

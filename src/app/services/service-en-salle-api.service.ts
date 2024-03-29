@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Tables ,Table} from '../entities/table';
-import { Observable, map ,catchError,of} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, catchError, map, of } from 'rxjs';
+import { Table, Tables } from '../entities/table';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ServiceEnSalleAPIService {
   URL: string = 'http://localhost:8080/table';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
   public getAllTables(): Observable<Tables> {
     return this.httpClient.get<Tables>(this.URL).pipe(
       map((tables: Tables | null) => {
@@ -36,6 +36,4 @@ export class ServiceEnSalleAPIService {
       })
     );
   }
-
-  
 }

@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ReservationAPIService } from '../../services/reservation.service-api.service';
-import { Reservation, Reservations } from '../../entities/reservation';
-import { FormReservationComponent } from '../form-reservation/form-reservation.component';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
+import { Reservation, Reservations } from '../../entities/reservation';
+import { ReservationAPIService } from '../../services/reservation.service-api.service';
+import { FormReservationComponent } from '../form-reservation/form-reservation.component';
 
 @Component({
   selector: 'app-reservations',
@@ -15,11 +15,13 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 })
 @Injectable({ providedIn: 'root' })
 export class ReservationsComponent implements OnInit {
-
   public reservationToday$?: Observable<Reservations>;
   public reservationTomorrow$?: Observable<Reservations>;
 
-  constructor(public reservationAPIService: ReservationAPIService, public NgbModal: NgbModal) {}
+  constructor(
+    public reservationAPIService: ReservationAPIService,
+    public NgbModal: NgbModal
+  ) {}
 
   ngOnInit(): void {
     console.log('OnInit');
@@ -53,30 +55,16 @@ export class ReservationsComponent implements OnInit {
       });
   }
 
-  /* createReservation(reservation: Reservation) {
-    this.reservationAPIService.createReservation(reservation).subscribe({
-      next: (createdReservation) => {
-        console.log('Reservation créée avec succès:', createdReservation);
-      },
-      error: (error) => {
-        console.error('Erreur lors de la création de la réservation:', error);
-      }
-    });
-  } */
-
-  public modalOptions =  {
+  public modalOptions = {
     centered: true,
-    animation: true
-  }
+    animation: true,
+  };
 
   afficherFormulaireReservation() {
-
-    const modalRef: NgbModalRef = this.NgbModal.open(FormReservationComponent, this.modalOptions);
-
-
+    const modalRef: NgbModalRef = this.NgbModal.open(
+      FormReservationComponent,
+      this.modalOptions
+    );
     const component: FormReservationComponent = modalRef.componentInstance;
-    /* component.reservation = reservation; */
-
   }
-
 }

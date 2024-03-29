@@ -1,51 +1,52 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Reservation, Reservations } from '../entities/reservation';
 import { EMPTY, Observable, catchError, map, of } from 'rxjs';
+import { Reservation, Reservations } from '../entities/reservation';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ReservationAPIService {
-
-
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
   URL: string = 'http://localhost:8080/reservations';
 
-
   public getAllReservationsToday(): Observable<Reservations> {
-    return this.httpClient.get<Reservations>(this.URL+'/today/restaurant/4').pipe(
-      map((reservationsToday: Reservations | null) => {
-        if (reservationsToday == null) {
-          return [];
-        }
+    return this.httpClient
+      .get<Reservations>(this.URL + '/today/restaurant/4')
+      .pipe(
+        map((reservationsToday: Reservations | null) => {
+          if (reservationsToday == null) {
+            return [];
+          }
 
-        return reservationsToday;
-      }),
+          return reservationsToday;
+        }),
 
-      catchError((e) => {
-        console.error(e);
+        catchError((e) => {
+          console.error(e);
 
-        return of([]);
-      })
-    );
+          return of([]);
+        })
+      );
   }
 
   public getAllReservationsTomorrow(): Observable<Reservations> {
-    return this.httpClient.get<Reservations>(this.URL+'/tomorrow/restaurant/4').pipe(
-      map((reservationsTomorrow: Reservations | null) => {
-        if (reservationsTomorrow == null) {
-          return [];
-        }
-        return reservationsTomorrow;
-      }),
+    return this.httpClient
+      .get<Reservations>(this.URL + '/tomorrow/restaurant/4')
+      .pipe(
+        map((reservationsTomorrow: Reservations | null) => {
+          if (reservationsTomorrow == null) {
+            return [];
+          }
+          return reservationsTomorrow;
+        }),
 
-      catchError((e) => {
-        console.error(e);
+        catchError((e) => {
+          console.error(e);
 
-        return of([]);
-      })
-    );
+          return of([]);
+        })
+      );
   }
 
   updateReservationStatus(id: number, newStatus: string): Observable<any> {
@@ -65,7 +66,6 @@ export class ReservationAPIService {
         console.error(e);
         return EMPTY;
       })
-    )
+    );
   }
-
 }

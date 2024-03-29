@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   height: 85vh;
-
   gap: 20px;
 }
 
@@ -16,10 +15,9 @@
   width: 150px;
   background-color: #ffbc5b;
   border-radius: 5%;
-
 }
 .card:hover {
-  cursor:pointer;
+  cursor: pointer;
   background-color: #ffc47a;
 }
 
@@ -28,10 +26,9 @@
   color: #bc4a55;
   font-weight: bold;
 }
-.nav-link{
+.nav-link {
   padding: 0px;
 }
-
 
 .hidden {
   visibility: hidden;
