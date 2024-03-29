@@ -6,7 +6,6 @@ import {
   RouterStateSnapshot,
   Routes,
 } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
 import { AccueilClienteleComponent } from './components/accueil-clientele/accueil-clientele.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { ServiceEnSalleComponent } from './components/service-en-salle/service-en-salle.component';
@@ -15,6 +14,7 @@ import { CaisseComponent } from './components/caisse/caisse.component';
 import { CommandeParTableComponent } from './components/commande-par-table/commande-par-table.component';
 
 import { FormReservationComponent } from './components/form-reservation/form-reservation.component';
+import { HomeComponent } from './components/home/home.component';
 // import { NewStructuralDirectivesComponent } from './components/new-structural-directives/new-structural-directives.component';
 // import { inject } from '@angular/core';
 // import { StorageService } from './services/storage.service';
@@ -40,10 +40,12 @@ export const routes: Routes = [
   { path: 'cuisine', component: CuisineComponent },
   { path: 'caisse', component: CaisseComponent },
 
+
   { path: 'commande/:id', component: CommandeParTableComponent },
   
 
   { path: 'form-reservation', component: FormReservationComponent},
+
 
 
 
