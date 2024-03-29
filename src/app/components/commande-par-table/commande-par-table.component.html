@@ -1,8 +1,31 @@
 <h1>Commande par table</h1>
 
+<div *ngIf="plats$ | async as plats; else loading">
+  <h2>Liste des Plats</h2>
+  <ul>
+    <li *ngFor="let plat of plats">
+      <strong>Nom:</strong> {{ plat.nom }} - <strong>Prix:</strong> {{ plat.prix }}
+      <button (click)="ajouterPlatACommande(plat)">ajouter</button>
+    </li>
+  </ul>
+</div>
+<ng-template #loading>
+  <p>Chargement des plats...</p>
+</ng-template>
+
+
 <ng-container *ngIf="tables$ | async as table">
   <div>
     <p>Numéro de table: {{ table.numero}}</p>
 
   </div>
 </ng-container>
+
+<div *ngIf="platsSelectionnes">
+  <h3>Plats sélectionnés pour la commande </h3>
+  <ul>
+    <li *ngFor="let plat of platsSelectionnes">
+      {{ plat.nom }} - {{ plat.prix }} <button (click)="supprimerPlatDeCommande(plat)">supprimer</button>
+    </li>
+  </ul>
+</div>
