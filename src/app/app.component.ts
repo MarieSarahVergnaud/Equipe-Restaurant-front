@@ -17,7 +17,7 @@ export class AppComponent {
 
   // public isAuthenticated$: Observable<boolean>;
 
-  constructor( 
+  constructor(
     // private loginService: LoginService
     ) {
     // this.isAuthenticated$ = loginService.isAuthenticated$;

@@ -26,7 +26,7 @@ export class AccueilClienteleComponent implements OnInit {
     this.acceuilClienteleAPIService
       .updateTableStatus(table.id, newStatus)
       .subscribe(() => {
-        this.tables$ = this.acceuilClienteleAPIService.getAllTables(); // Refresh tables
+        this.tables$ = this.acceuilClienteleAPIService.getAllTables();
       });
   }
 
@@ -35,7 +35,7 @@ export class AccueilClienteleComponent implements OnInit {
     this.acceuilClienteleAPIService
       .updateTableStatus(table.id, newStatus)
       .subscribe(() => {
-        this.tables$ = this.acceuilClienteleAPIService.getAllTables(); // Refresh tables
+        this.tables$ = this.acceuilClienteleAPIService.getAllTables();
       });
   }
 }
