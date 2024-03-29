@@ -1,11 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
 import { Reservation } from '../../entities/reservation';
 import { ReservationAPIService } from '../../services/reservation.service-api.service';
-import { Observable } from 'rxjs';
-import { Restaurant } from '../../entities/restaurant';
 
 @Component({
   selector: 'app-form-reservation',
@@ -23,8 +22,6 @@ export class FormReservationComponent {
   public reservation$?: Observable<Reservation>;
   public restaurantId?: number;
 
-
-
   constructor(
     public ngbActiveModal: NgbActiveModal,
     public reservationAPIService: ReservationAPIService
@@ -40,17 +37,14 @@ export class FormReservationComponent {
   }
 
   onSubmit() {
-    // Creation d'une nouvelle instance de Reservation
-    // avec les données du formulaire
-
     const newReservation: Reservation = {
-      id : -1,
+      id: -1,
       date: this.date,
       heure: this.time,
       nbrPlace: this.numberOfPeople,
       etat: 'EN ATTENTE',
-      restaurant: {id: 4},
-      client:  null,
+      restaurant: { id: 4 },
+      client: null,
       tables: null,
     };
 

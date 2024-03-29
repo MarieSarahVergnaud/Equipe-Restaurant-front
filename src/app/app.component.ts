@@ -9,14 +9,10 @@ import { AsyncPipe } from '@angular/common';
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, AsyncPipe],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'Equipe Restaurant Front';
 
-
-  constructor(
-    ) {
-
-  }
+  constructor() {}
 }

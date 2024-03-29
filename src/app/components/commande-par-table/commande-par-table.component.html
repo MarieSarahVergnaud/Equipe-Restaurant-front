@@ -1,5 +1,4 @@
 <h1>Commande par table</h1>
-
 <div *ngIf="plats$ | async as plats; else loading">
   <h2>Liste des Plats</h2>
   <ul>
@@ -12,15 +11,11 @@
 <ng-template #loading>
   <p>Chargement des plats...</p>
 </ng-template>
-
-
 <ng-container *ngIf="tables$ | async as table">
   <div>
     <p>Numéro de table: {{ table.numero}}</p>
-
   </div>
 </ng-container>
-
 <div *ngIf="platsSelectionnes">
   <h3>Plats sélectionnés pour la commande </h3>
   <ul>

@@ -1,4 +1,4 @@
 export interface IMenuRoute {
-    libelle: string;
-    path: string;
+  libelle: string;
+  path: string;
 }
