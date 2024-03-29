@@ -1,1 +1,11 @@
-<p>Page service-en-salle </p>
+<h1>Tables</h1>
+
+<ng-container *ngIf="tables$ | async as tables">
+  <div class="tables-container">
+    <div *ngFor="let table of tables">
+      <ng-container *ngIf="table.etat === 'LIBRE'">
+        <div (click)="onViewTable(table.id)" class="numero-box ">{{ table.numero }}</div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

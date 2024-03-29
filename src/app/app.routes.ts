@@ -12,6 +12,8 @@ import { ReservationsComponent } from './components/reservations/reservations.co
 import { ServiceEnSalleComponent } from './components/service-en-salle/service-en-salle.component';
 import { CuisineComponent } from './components/cuisine/cuisine.component';
 import { CaisseComponent } from './components/caisse/caisse.component';
+import { CommandeParTableComponent } from './components/commande-par-table/commande-par-table.component';
+
 import { FormReservationComponent } from './components/form-reservation/form-reservation.component';
 // import { NewStructuralDirectivesComponent } from './components/new-structural-directives/new-structural-directives.component';
 // import { inject } from '@angular/core';
@@ -37,7 +39,12 @@ export const routes: Routes = [
   { path: 'service-en-salle', component: ServiceEnSalleComponent },
   { path: 'cuisine', component: CuisineComponent },
   { path: 'caisse', component: CaisseComponent },
+
+  { path: 'commande/:id', component: CommandeParTableComponent },
+  
+
   { path: 'form-reservation', component: FormReservationComponent},
+
 
 
   // {
