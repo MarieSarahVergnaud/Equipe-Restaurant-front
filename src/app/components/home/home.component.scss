@@ -1,7 +1,10 @@
 .container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  height: 85vh;
+
   gap: 20px;
 }
 
@@ -9,8 +12,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 500px;
-  width: 500px;
-  background-color: burlywood
-;
+  height: 150px;
+  width: 150px;
+  background-color: #ffbc5b;
+  border-radius: 5%;
+
+}
+.card:hover {
+  cursor:pointer;
+  background-color: #ffc47a;
+}
+
+.card a {
+  text-decoration: none;
+  color: #bc4a55;
+  font-weight: bold;
+}
+.nav-link{
+  padding: 0px;
+}
+
+
+.hidden {
+  visibility: hidden;
 }
